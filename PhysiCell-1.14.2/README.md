@@ -4,9 +4,13 @@ From the the cloned repo:
 ```
 cd ~/git/test_param_sweep/PhysiCell-1.14.2
 make -j2   # this will create the "project" executable
+make save PROJ=MODEL1   # optional, if you really plan to have multiple models
+
 cp beta/params_run.py run_params.py
 cp beta/params_run.txt run_params.txt
 ```
+
+Edit these files, e.g.:
 
 ```
 (base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ cat run_params.txt 
@@ -25,6 +29,7 @@ cell_definitions.cell_definition[@name='invasive'].phenotype.cycle.phase_duratio
 run_it foobar
 ```
 
+Running them should result in a `/run1` and `/run2` output directories
 ```
 (base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ python run_params.py project run_params.txt
 ```
