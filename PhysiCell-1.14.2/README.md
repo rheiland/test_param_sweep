@@ -1,0 +1,55 @@
+# test_param_sweep
+
+From the the cloned repo:
+```
+cd ~/git/test_param_sweep/PhysiCell-1.14.2
+make -j2   # this will create the "project" executable
+cp beta/params_run.py run_params.py
+cp beta/params_run.txt run_params.txt
+```
+
+```
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ cat run_params.txt 
+# File to be used with params_run.py
+# Allows for changing parameters in .xml, running sim, and writing results to different folders.
+# <key> <value> pairs, where <key> is the first unique node name found in the xml.
+#max_time 120
+#full_data.enable false
+folder  run1 
+cell_definitions.cell_definition[@name='cancer'].phenotype.cycle.phase_durations.duration 1444
+run_it foobar
+#
+folder  run2 
+cell_definitions.cell_definition[@name='cancer'].phenotype.cycle.phase_durations.duration 1440
+cell_definitions.cell_definition[@name='invasive'].phenotype.cycle.phase_durations.duration 99999
+run_it foobar
+```
+
+```
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ python run_params.py project run_params.txt
+```
+
+```
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ diff config/PhysiCell_settings.xml run1/config.xml 
+30c30
+<         <folder>output</folder>
+---
+>         <folder>run1</folder>
+91c91
+<                         <duration index="0" fixed_duration="false">1440</duration>
+---
+>                         <duration index="0" fixed_duration="false">1444</duration>
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ 
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ 
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ diff config/PhysiCell_settings.xml run2/config.xml 
+30c30
+<         <folder>output</folder>
+---
+>         <folder>run2</folder>
+237c237
+<                         <duration index="0" fixed_duration="false">42000</duration>
+---
+>                         <duration index="0" fixed_duration="false">99999</duration>
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ 
+```
+

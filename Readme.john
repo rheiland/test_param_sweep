@@ -1,0 +1,14 @@
+John Nardini
+  12:09 PM
+Hi @Randy Heiland, Eddie and I think we're now ready for parameter sweeps but have some questions about using the params_run.py  file:
+
+1) When running params_run.py , we are not sure what the exec_pgm  input is supposed to be. When running python run_params.py user_projects/MODEL1 run_params.txt  (and modifying run_params.txt for the project), we get the error message can't find '__main__' module in '.../PhysiCell/user_projects/MODEL1' . There is a main.cpp  in the directory, but no __main__  that I can see.
+
+2) From the params_run.txt  example, we weren't sure how to specify which cell type parameter we're changing. For example, if I have two cell types: "cancer" and "invasive", and both have their own duration. How do I tell it to perturb the cancer cell durations vs. the invasive cell duration?
+
+3) Is it possible to perturb the cell_rule parameters from config/cell_rules.csv ? Eg, modify the hill coefficient and half max values?
+
+4) I wasn't sure what the full_data.enable false line is doing in the default params_run.txt  and assumed it was specific to that model run, so I deleted it for now. What does that do and/or should it be kept?
+
+As always, Thank you so much for your help! (edited) 
+
