@@ -6,14 +6,14 @@ cd ~/git/test_param_sweep/PhysiCell-1.14.2
 make -j2   # this will create the "project" executable
 make save PROJ=MODEL1   # optional, if you really plan to have multiple models
 
-cp beta/params_run.py run_params.py
-cp beta/params_run.txt run_params.txt
+cp beta/params_run.py params_run.py
+cp beta/params_run.txt params_run.txt
 ```
 
-Edit these files, e.g.:
+Edit these files to be relevant to the model in this repo, e.g.:
 
 ```
-(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ cat run_params.txt 
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ cat params_run.txt 
 # File to be used with params_run.py
 # Allows for changing parameters in .xml, running sim, and writing results to different folders.
 # <key> <value> pairs, where <key> is the first unique node name found in the xml.
@@ -31,7 +31,7 @@ run_it foobar
 
 Running them should result in a `/run1` and `/run2` output directories
 ```
-(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ python run_params.py project run_params.txt
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ python params_run.py project params_run.txt
 ```
 
 ```
