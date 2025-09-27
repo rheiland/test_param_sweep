@@ -10,7 +10,7 @@ cp beta/params_run.py params_run.py
 cp beta/params_run.txt params_run.txt
 ```
 
-Edit these files to be relevant to the model in this repo, e.g.:
+Edit `params_run.txt` so it is relevant for the model in this repo, e.g.:
 
 ```
 (base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ cat params_run.txt 
