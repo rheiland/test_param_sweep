@@ -29,7 +29,7 @@ cell_definitions.cell_definition[@name='invasive'].phenotype.cycle.phase_duratio
 run_it foobar
 ```
 
-Running them should result in a `/run1` and `/run2` output directories
+Running them should result in a `/run1` and `/run2` output directories. Note: `project` is the binary executable created when you ran `make` for this repo. If you are on Windows, it would be `project.exe` and, honestly, I've not tested the `params_run.py` script on Windows.
 ```
 (base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ python params_run.py project params_run.txt
 ```
