@@ -6,6 +6,8 @@ max_time 7200
 full_data.enable false
 worker_fraction 0.01
 max_relative_cell_adhesion_distance 1.25
+run_it foobar
 #
 folder  run2 
 max_relative_cell_adhesion_distance 2.5
+run_it foobar
