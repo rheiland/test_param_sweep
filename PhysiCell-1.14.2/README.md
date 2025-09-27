@@ -1,6 +1,6 @@
 # test_param_sweep
 
-From the the cloned repo:
+From the cloned repo:
 ```
 cd ~/git/test_param_sweep/PhysiCell-1.14.2
 make -j2   # this will create the "project" executable
