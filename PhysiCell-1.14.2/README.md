@@ -59,4 +59,28 @@ If you happen to be in a Unix shell and have the "diff" command, you can see wha
 >                         <duration index="0" fixed_duration="false">99999</duration>
 (base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ 
 ```
+<hr>
 
+For a different model, let's try a predator-prey.
+
+```
+make load PROJ=pred_prey
+make
+python params_run.py project params_run_pred_prey.txt
+
+# as before, you can use a "diff" command to see the differences in the config files:
+diff prey_run1/config.xml prey_run2/config.xml
+--> results in:
+30c30
+<         <folder>prey_run1</folder>
+---
+>         <folder>prey_run2</folder>
+422c422
+<                 <filename>pred_prey_rules1.csv</filename>
+---
+>                 <filename>pred_prey_rules2.csv</filename>
+```
+and these are the final .svg images from each run, showing the difference that each set of rules makes (Note: we are using a single thread to run a simulation):
+
+
+<img src="../images/prey_run1.png" width="30%"> <img src="../images/prey_run2.png" width="30%"> <img src="../images/prey_run3.png" width="30%">
