@@ -61,7 +61,13 @@ If you happen to be in a Unix shell and have the "diff" command, you can see wha
 ```
 <hr>
 
-For a different model, let's try a predator-prey.
+## Predator Prey
+
+For a different model, consider the classic predator-prey. Two types of agents: predators chase prey; prey try to avoid predators. Different rules will lead to very different results:
+* when a predator contacts a prey, the prey dies
+* when a predator contacts a predator, they might proliferate (have babies)
+* when a prey contacts a prey, they might proliferate (have babies)
+
 
 ```
 make load PROJ=pred_prey
@@ -80,6 +86,25 @@ diff prey_run1/config.xml prey_run2/config.xml
 ---
 >                 <filename>pred_prey_rules2.csv</filename>
 ```
+these are the 3 rules (note that in some of the .csv files, the rules are commented out):
+```
+==> config/pred_prey_rules1.csv <==
+predator,contact with prey,increases,phagocytose prey,0.2,0.5,4,0
+//prey,contact with prey,increases,cycle entry,0.003,0.5,4,0
+//predator,contact with predator,increases,cycle entry,0.002,0.5,4,0
+
+==> config/pred_prey_rules2.csv <==
+predator,contact with prey,increases,phagocytose prey,0.2,0.5,4,0
+prey,contact with prey,increases,cycle entry,0.003,0.5,4,0
+//predator,contact with predator,increases,cycle entry,0.002,0.5,4,0
+
+==> config/pred_prey_rules3.csv <==
+predator,contact with prey,increases,phagocytose prey,0.2,0.5,4,0
+prey,contact with prey,increases,cycle entry,0.003,0.5,4,0
+predator,contact with predator,increases,cycle entry,0.002,0.5,4,0
+```
+
+
 and these are the final .svg images from each run, showing the difference that each set of rules makes (Note: we are using a single thread to run a simulation):
 
 
