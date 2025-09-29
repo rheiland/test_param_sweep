@@ -1,0 +1,3 @@
+predator,contact with prey,increases,phagocytose prey,0.2,0.5,4,0
+prey,contact with prey,increases,cycle entry,0.003,0.5,4,0
+//predator,contact with predator,increases,cycle entry,0.002,0.5,4,0
