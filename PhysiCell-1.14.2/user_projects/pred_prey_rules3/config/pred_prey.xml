@@ -418,7 +418,7 @@
     <cell_rules>
         <rulesets>
             <ruleset protocol="CBHG" version="3.0" format="csv" enabled="true">
-                <folder>/Users/heiland/git/test_param_sweep/PhysiCell-1.14.2/config</folder>
+                <folder>config</folder>
                 <filename>pred_prey_rules3.csv</filename>
             </ruleset>
         </rulesets>
