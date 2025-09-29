@@ -1,6 +1,6 @@
 John Nardini
   12:09 PM
-```
+
 Hi @Randy Heiland, Eddie and I think we're now ready for parameter sweeps but have some questions about using the params_run.py  file:
 
 1) When running params_run.py , we are not sure what the exec_pgm  input is supposed to be. When running python run_params.py user_projects/MODEL1 run_params.txt  (and modifying run_params.txt for the project), we get the error message can't find '__main__' module in '.../PhysiCell/user_projects/MODEL1' . There is a main.cpp  in the directory, but no __main__  that I can see.
@@ -12,5 +12,5 @@ Hi @Randy Heiland, Eddie and I think we're now ready for parameter sweeps but ha
 4) I wasn't sure what the full_data.enable false line is doing in the default params_run.txt  and assumed it was specific to that model run, so I deleted it for now. What does that do and/or should it be kept?
 
 As always, Thank you so much for your help! (edited) 
-```
+
 
