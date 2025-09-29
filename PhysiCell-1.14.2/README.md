@@ -103,7 +103,9 @@ predator,contact with prey,increases,phagocytose prey,0.2,0.5,4,0
 prey,contact with prey,increases,cycle entry,0.003,0.5,4,0
 predator,contact with predator,increases,cycle entry,0.002,0.5,4,0
 ```
+Here are the initial conditions at t=0 (75 prey, 25 predators):
 
+<img src="../images/pred_prey_t0.png" width="30%">
 
 and these are the final .svg images from each run, showing the difference that each set of rules makes (Note: we are using a single thread to run a simulation):
 
