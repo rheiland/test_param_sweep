@@ -1,0 +1,17 @@
+# File to be used with params_run.py
+# Allows for changing parameters in .xml, running sim, and writing results to different folders.
+# <key> <value> pairs, where <key> is the first unique node name found in the xml.
+#folder  prey_run0 
+#run_it foobar
+#
+folder  prey_run1 
+ruleset.filename pred_prey_rules1.csv
+run_it foobar
+#
+folder  prey_run2 
+ruleset.filename pred_prey_rules2.csv
+run_it foobar
+#
+folder  prey_run3 
+ruleset.filename pred_prey_rules3.csv
+run_it foobar

@@ -4,9 +4,6 @@
 # copies the new config file into the new folder, then
 # runs the simulation (in the background) which writes results into the new folder.
 # 
-# Sep 2025 update: allow XML attributes to be modified
-#
-# Randy Heiland
 
 import xml.etree.ElementTree as ET
 from shutil import copyfile
@@ -28,6 +25,7 @@ background_str = " &"  # works on Unix
 if sys.platform == 'win32':
     background_str = ""
 
+
 xml_file_in = 'config/PhysiCell_settings.xml'
 xml_file_out = 'config/tmp.xml'
 copyfile(xml_file_in, xml_file_out)
@@ -42,8 +40,6 @@ with open(params_file) as f:
         if (line[0] == '#'):
             continue
         (key, val) = line.split()
-        # print("  key=",key)
-        # print("  val=",val)
         if (key == 'run_it'):
             # write the config file to the previous folder (output) dir and start a simulation
             # print('---write config file and start its sim')
@@ -58,21 +54,11 @@ with open(params_file) as f:
                 subprocess.Popen([exec_pgm, xml_file_out],stdout=outf)
         elif ('.' in key):
             k = key.split('.')
-            # print("    k=",k)
             uep = xml_root
-            attrib_flag = False
             for idx in range(len(k)):
-                # print("    k[idx]=",k[idx])
-                if k[idx][0] == '@':   # are we setting a value on an attribute?
-                    attrib_flag = True
-                    # uep.find(".//cell_rules//rulesets//ruleset").attrib['enabled'] = 'true'
-                    # uep.attrib['enabled'] = 'true'
-                    uep.attrib[k[idx][1:]] = val
-                    continue
                 uep = uep.find('.//' + k[idx])  # unique entry point (uep) into xml
 #                print(k[idx])
-            if not attrib_flag:
-                uep.text = val
+            uep.text = val
         else:
             if (key == 'folder'):
                 folder_name = val

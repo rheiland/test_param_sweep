@@ -8,6 +8,6 @@ cell_definitions.cell_definition[@name='cancer'].phenotype.cycle.phase_durations
 run_it foobar
 #
 folder  run2 
-cell_definitions.cell_definition[@name='cancer'].phenotype.cycle.phase_durations.duration 1440
+#cell_definitions.cell_definition[@name='cancer'].phenotype.cycle.phase_durations.duration 1440
 cell_definitions.cell_definition[@name='invasive'].phenotype.cycle.phase_durations.duration 99999
 run_it foobar
