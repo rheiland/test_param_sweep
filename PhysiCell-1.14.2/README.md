@@ -111,3 +111,28 @@ and these are the final .svg images from each run, showing the difference that e
 
 
 <img src="../images/prey_run1.png" width="30%"> <img src="../images/prey_run2.png" width="30%"> <img src="../images/prey_run3.png" width="30%">
+
+### Modify XML attributes
+
+A new feature that was just added to the `params_run.py` script is the ability to modify XML attributes. Here, we demonstrate using it to toggle off and on the "enabled" attribute for rules.
+```
+python params_run.py project params_run_pred_prey2.txt
+```
+where the "@" prefix indicates an attribute:
+```
+(base) M1P~/git/test_param_sweep/PhysiCell-1.14.2$ cat params_run_pred_prey2.txt 
+...
+folder  output_test_rules_off
+ruleset.@enabled false
+ruleset.filename pred_prey_rules1.csv
+run_it foobar
+#
+folder  output_test_rules_on
+ruleset.@enabled true
+ruleset.filename pred_prey_rules2.csv
+run_it foobar
+```
+This is the result when we have the rules disabled (therefore no phagocytosis or proliferation):
+
+<img src="../images/pred_prey_no_rules.png" width="30%">
+
